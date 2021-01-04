@@ -30,6 +30,25 @@ namespace Proiect
                 BindingContext = new ShopList()
             });
         }
+
+        async void OnMagazineClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Magazine
+            {
+                BindingContext = new ShopList()
+            });
+        }
+       
+
+        //async void MagazineDisponibileClicked(object sender, EventArgs e)
+        //{
+        //listView.ItemsSource = await App.Database.GetShopListsAsync();
+        // List<string> MahazineList = new List<string>();
+        //MahazineList.Add("Mahesh Chand");
+        //  }
+
+
+
         async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)

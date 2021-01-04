@@ -4,7 +4,7 @@
              x:Class="Proiect.ListPage">
     <ContentPage.Content xmlns:local="clr-namespace:Proiect">
         <StackLayout Margin="20">
-            <Editor Placeholder="Enter the description of the shopping list"
+            <Editor Placeholder="Adauga magazinul ales"
                         Text="{Binding Description}"
                         HeightRequest="100">
                 <Editor.Behaviors>
@@ -14,17 +14,17 @@
                 </Editor.Behaviors>
             </Editor>
 
-            <Button Text="Add/Choose Item to buy" Clicked="OnChooseButtonClicked"/>
+            <Button Text="Adauga in lista" Clicked="OnChooseButtonClicked" BackgroundColor="#FFFF00"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" 
-                        Clicked="OnSaveButtonClicked" />
+                <Button Text="Salveaza" 
+                        Clicked="OnSaveButtonClicked" BackgroundColor="#FFFF00"/>
                 <Button Grid.Column="1"
-                        Text="Delete"
-                        Clicked="OnDeleteButtonClicked"/>
+                        Text="Sterge"
+                        Clicked="OnDeleteButtonClicked" BackgroundColor="#FFFF00"/>
                 <ListView Grid.Row="1" Grid.ColumnSpan="2" x:Name="listView" Margin="20">
                     <ListView.ItemTemplate>
                         <DataTemplate>

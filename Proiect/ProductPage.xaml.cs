@@ -22,6 +22,28 @@ namespace Proiect
         }
 
 
+
+
+        private async void Button_StergeleElementClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var selectedProductId = ((Button)sender).CommandParameter;
+                var selectedProduct = App.Database.GetProductAsync((int)selectedProductId).Result;
+                await App.Database.DeleteProductAsync(selectedProduct);
+
+                //Forteaza reafisarea tuturor elementelor din list view
+                OnAppearing();
+            }
+            catch
+            {
+                //lista produse
+            }
+        }
+
+
+
+
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var product = (Product)BindingContext;

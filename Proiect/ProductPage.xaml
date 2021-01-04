@@ -4,9 +4,7 @@
              x:Class="Proiect.ProductPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Enter product name" Margin="20"
- Text="{Binding Description}"
- HeightRequest="50" />
+            <Editor Placeholder="Introdu produsul dorit" Margin="20" Text="{Binding Description}" HeightRequest="50" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -16,17 +14,30 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save"
- Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1"
- Text="Delete"
-Clicked="OnDeleteButtonClicked"/>
-                <ListView Grid.Row="1" x:Name="listView"
- Margin="20"
- ItemSelected="OnListViewItemSelected">
+
+
+
+                <Button Text="Salveaza" Clicked="OnSaveButtonClicked" BackgroundColor="#FFFF00"/>
+                <Button Grid.Column="1" Text="Sterge" Clicked="OnDeleteButtonClicked" BackgroundColor="#FFFF00"/>
+
+
+                <ListView Grid.Row="1" Grid.ColumnSpan="2"  x:Name="listView" Margin="20" ItemSelected="OnListViewItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding Description}" />
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50*" />
+                                        <ColumnDefinition Width="50*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label  Grid.Column="0" Text="{Binding Description}" />
+                                    <Button Grid.Column="1" CommandParameter="{Binding ID}" Text="Remove" Clicked="Button_StergeleElementClicked" BackgroundColor="#FFFF00"/>
+                                </Grid>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

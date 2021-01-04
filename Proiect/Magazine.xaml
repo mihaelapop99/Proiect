@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Magazine">
+
+
+   
+
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Mgz}">
+            <ListView.ItemTemplate ItemSelected="OnListViewItemSelected">
+                <DataTemplate>
+                    <TextCell Detail="{Binding Denumire}" Text="{Binding Description}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </ContentPage.Content>
+
+    <StackLayout>
+        <Label Text="Lista magazinelor din oras" FontSize="Title"  Padding="30,10,30,10" TextColor="#FFCC00"/>
+        <Label Text="Auchan, Iulius Mall Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Mega Image, Str Dambovitei Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Cora, Vivo Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Kaufland, Str Fabricii Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Lidl, Str Alexandru Voievod Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Alma, Str Republicii Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Neira, Str Fabricii de Zahar Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Selgros, Calea Someseni Cluj-Napoca" FontSize="15" Padding="30,10,30,10"/>
+
+
+        <Label Text="Lista produse" FontSize="Title"  Padding="70,10,30,10" TextColor="#FFCC00"/>
+        <Label Text="Espresso" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Americano" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Latte" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Cappuccino" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Kinder Maxi King" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Kinder Bueno" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Milk" FontSize="15" Padding="30,10,30,10"/>
+        <Label Text="Bread" FontSize="15" Padding="30,10,30,10"/>
+        
+    </StackLayout>
+
+
+</ContentPage>

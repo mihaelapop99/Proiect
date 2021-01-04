@@ -97,7 +97,12 @@ namespace Proiect.Data
         }
 
 
-
+        public Task<Product> GetProductAsync(int productId)  //stergerea de elem
+        {
+            return _database.Table<Product>()
+                .Where(i => i.ID == productId)
+                .FirstOrDefaultAsync();
+        }
 
 
 
